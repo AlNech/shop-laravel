@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -17,7 +18,8 @@ class MainController extends BaseController
         return view('categories');
     }
 
-    public function category($category) {
+    public function category($code) {
+        $category = Category::where('code', $code)->first();
         return view('category', compact('category'));
     }
 

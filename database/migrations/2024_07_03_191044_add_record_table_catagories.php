@@ -12,7 +12,7 @@ return new class extends Migration {
      */
     public function up()
     {
-        DB::table('table_categories')->insert(
+        DB::table('categories')->insert(
             array(
                 [
                     'name' => 'Чай',
